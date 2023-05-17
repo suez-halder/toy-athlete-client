@@ -1,15 +1,11 @@
 
-import './App.css'
 
-function App() {
-  
-
+const App = () => {
   return (
-    <>
-      <h2 className='text-7xl'>Toys are here</h2>
-      
-    </>
-  )
-}
+    <div>
+      <h2>What a wonderful world!</h2>
+    </div>
+  );
+};
 
-export default App
+export default App;
