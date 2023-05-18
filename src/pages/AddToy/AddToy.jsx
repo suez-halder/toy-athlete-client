@@ -3,6 +3,11 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import ToyBanner from "../Shared/ToyBanner";
 
+/*
+baseball -  https://i.ibb.co/JmWLzX4/baseball.png
+football - https://i.ibb.co/Dp7sQjd/football.png
+tennis- https://i.ibb.co/SvbfJqD/pingPong.png
+ */
 
 
 const AddToy = () => {
@@ -23,7 +28,30 @@ const AddToy = () => {
         const quantity = form.quantity.value;
         const description = form.description.value;
      
-        console.log(name, email, toyName, price, subCategory, toyPhoto, rating, quantity, description);
+        // console.log(name, email, toyName, price, subCategory, toyPhoto, rating, quantity, description);
+        const newToy = {name, email, toyName, price, subCategory, toyPhoto, rating, quantity, description};
+        // console.log(newToy);
+
+        fetch('http://localhost:3000/addtoy', {
+            method: 'POST',
+            headers:{
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newToy)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data);
+            if(data.insertedId){
+                alert("New Toy Added")
+            }
+            form.reset();
+        })
+        
+        
+        
+        
+        
     }
 
 
@@ -41,27 +69,27 @@ const AddToy = () => {
                             <div className="mt-8 grid lg:grid-cols-2 gap-4">
                                 <div>
                                     <label htmlFor="name" className="text-sm text-gray-700 block mb-1 font-medium">Seller Name</label>
-                                    <input type="text" name="name" defaultValue={user.displayName} id="name" className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" placeholder="Enter your name" />
+                                    <input type="text" name="name" defaultValue={user.displayName} id="name" className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" placeholder="Enter your name" required />
                                 </div>
 
                                 <div>
                                     <label htmlFor="email" className="text-sm text-gray-700 block mb-1 font-medium">Email Address</label>
-                                    <input type="text" name="email" defaultValue={user.email} id="email" className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" placeholder="email@email.com" />
+                                    <input type="text" name="email" defaultValue={user.email} id="email" className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" placeholder="email@email.com" required/>
                                 </div>
 
                                 <div>
                                     <label htmlFor="toyName" className="text-sm text-gray-700 block mb-1 font-medium">Toy Name</label>
-                                    <input type="text" name="toyName" id="toyName" className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" placeholder="Enter toy name" />
+                                    <input type="text" name="toyName" id="toyName" className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" placeholder="Enter toy name" required/>
                                 </div>
 
                                 <div>
                                     <label htmlFor="price" className="text-sm text-gray-700 block mb-1 font-medium">Price</label>
-                                    <input type="text" name="price" id="price" className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" placeholder="Price" />
+                                    <input type="text" name="price" id="price" className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" placeholder="Price" required/>
                                 </div>
                                 <div>
                                     <label htmlFor="job" className="text-sm text-gray-700 block mb-1 font-medium">Sub-category</label>
                                    
-                                    <select id="subCategory" name="subCategory" className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full">
+                                    <select id="subCategory" name="subCategory" className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" required>
                                         <option value="football">Football</option>
                                         <option value="basketball">Baseball</option>
                                         <option value="tennis">Table Tennis</option>
@@ -71,24 +99,24 @@ const AddToy = () => {
 
                                 <div>
                                     <label htmlFor="toyPhoto" className="text-sm text-gray-700 block mb-1 font-medium">Toy Picture URL</label>
-                                    <input type="text" name="toyPhoto" id="toyPhoto" className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" placeholder="Toy Picture URL" />
+                                    <input type="text" name="toyPhoto" id="toyPhoto" className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" placeholder="Toy Picture URL" required/>
                                 </div>
 
                                 <div>
                                     <label htmlFor="rating" className="text-sm text-gray-700 block mb-1 font-medium">Rating</label>
                             
-                                    <select id="rating" name="rating" className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" placeholder="*">
-                                        <option value="1">*</option>
-                                        <option value="2">**</option>
-                                        <option value="3">***</option>
-                                        <option value="4">****</option>
+                                    <select id="rating" name="rating" className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" placeholder="*" required>
                                         <option value="5">*****</option>
+                                        <option value="4">****</option>
+                                        <option value="3">***</option>
+                                        <option value="2">**</option>
+                                        <option value="1">*</option>
                                     </select>
                                 </div>
 
                                 <div>
                                     <label htmlFor="quantity" className="text-sm text-gray-700 block mb-1 font-medium">Quantity</label>
-                                    <input type="number" name="quantity" id="quantity" className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" placeholder="Quantity" />
+                                    <input type="number" min={0} name="quantity" id="quantity" className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" placeholder="Quantity" required />
                                 </div>
                                 <div>
                                     <label htmlFor="description" className="text-sm text-gray-700 block mb-1 font-medium">Toy Description</label>
