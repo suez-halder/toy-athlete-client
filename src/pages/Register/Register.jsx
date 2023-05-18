@@ -43,6 +43,7 @@ const Register = () => {
             })
             .catch(error => {
                 console.log(error);
+                form.reset();
             })
 
         

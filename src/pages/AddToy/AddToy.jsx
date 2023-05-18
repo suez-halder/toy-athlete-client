@@ -1,9 +1,11 @@
+import ToyBanner from "../Shared/ToyBanner";
 
 
 const AddToy = () => {
     return (
         <div>
-            <h2>add a toy here</h2>
+            <ToyBanner>Add a Toy</ToyBanner>
+            
         </div>
     );
 };

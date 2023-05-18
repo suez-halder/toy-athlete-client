@@ -31,6 +31,7 @@ const Login = () => {
 
             .catch(error => {
                 setError("Please enter a valid password");
+                form.reset()
                 // console.log(error);
             })
 
