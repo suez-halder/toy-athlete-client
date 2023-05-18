@@ -4,9 +4,31 @@ import { AuthContext } from "../../providers/AuthProvider";
 import ToyBanner from "../Shared/ToyBanner";
 
 /*
-baseball -  https://i.ibb.co/JmWLzX4/baseball.png
-football - https://i.ibb.co/Dp7sQjd/football.png
-tennis- https://i.ibb.co/SvbfJqD/pingPong.png
+1. baseball -  
+baseball- https://i.ibb.co/JmWLzX4/baseball.png
+bat- https://i.ibb.co/b1rfgSK/bat.png
+gloves- https://i.ibb.co/6nxDWMV/gloves.png
+helmet- https://i.ibb.co/bLxh1DN/helmet.png
+softball- https://i.ibb.co/RYt2vq0/softball.png
+
+
+2. football - 
+football- https://i.ibb.co/Dp7sQjd/football.png
+card- https://i.ibb.co/LQSMDT5/card.png
+field- https://i.ibb.co/cw22B6D/field.png
+medal- https://i.ibb.co/khztjYn/medel.png
+whistle- https://i.ibb.co/vj5kKWk/whistle.png
+
+
+
+
+3. tennis- 
+set- https://i.ibb.co/SvbfJqD/pingPong.png
+cover- https://i.ibb.co/nc2CrP1/cover.png
+net- https://i.ibb.co/BtHPLbR/net.png
+bat- https://i.ibb.co/P1Tv45S/bat.png
+pongBalls- https://i.ibb.co/pwfqHzy/pong-Balls.png
+table- https://i.ibb.co/gM8xKwm/table.png
  */
 
 

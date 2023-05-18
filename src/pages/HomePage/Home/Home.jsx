@@ -10,12 +10,12 @@ import Services from "../Services/Services";
 const Home = () => {
     return (
         <div>
-            <Banner></Banner>
+            {/* <Banner></Banner> */}
             <Categories></Categories>
-            <Gallery></Gallery>
-            <Collections></Collections>
-            <BestDeals></BestDeals>
-            <Services></Services>
+            {/* <Gallery></Gallery> */}
+            {/* <Collections></Collections> */}
+            {/* <BestDeals></BestDeals> */}
+            {/* <Services></Services> */}
             
 
         </div>

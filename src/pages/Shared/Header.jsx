@@ -47,6 +47,7 @@ const Header = () => {
             </div>
             <div className="navbar-end">
                 {
+                    
                     user?.photoURL && <img className="rounded-full h-10 mr-2" src={user.photoURL} alt="" title={user.displayName}/>
                 }
                 {
