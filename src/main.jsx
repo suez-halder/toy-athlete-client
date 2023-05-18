@@ -9,6 +9,11 @@ import Home from './pages/HomePage/Home/Home.jsx';
 import HomeLayout from './layouts/HomeLayout';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
+import AddToy from './pages/AddToy/AddToy';
+import MyToys from './pages/MyToys/MyToys';
+import AllToys from './pages/AllToys/AllToys';
+import Blogs from './pages/Blogs/Blogs';
+import AuthProvider from './providers/AuthProvider';
 
 const router = createBrowserRouter([
   {
@@ -20,12 +25,29 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
+        path: '/allToys',
+        element: <AllToys></AllToys>
+      },
+      {
+        path: '/addToy',
+        element: <AddToy></AddToy>
+      },
+      {
+        path: '/myToys',
+        element: <MyToys></MyToys>
+      },
+      {
         path: 'login',
         element: <Login></Login>
       },
       {
         path: 'register',
         element: <Register></Register>
+      },
+      {
+        path: 'blogs',
+        element: <Blogs></Blogs>
+
       }
     ]
   },
@@ -34,7 +56,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <div className='max-w-screen-xl mx-auto'>
-      <RouterProvider router={router} />
+      <AuthProvider><RouterProvider router={router} /></AuthProvider>
     </div>
   </React.StrictMode>,
 )
