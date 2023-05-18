@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 
 const ToyRow = ({toyRow}) => {
     // console.log(toyRow);
-    const {_id, name, toyName, subCategory, price, quantity} = toyRow;
+    const {_id, name, toyName, subCategory,toyPhoto, price, quantity} = toyRow;
     
     
     
     return (
         <tr>
             
+            <td><img className="h-20 w-20 rounded-full bg-info mx-auto" src={toyPhoto} alt="" /></td>
             <td>{name}</td>
             <td>{toyName}</td>
             <td>{subCategory}</td>

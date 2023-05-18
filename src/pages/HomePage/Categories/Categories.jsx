@@ -17,6 +17,7 @@ const Categories = () => {
     
     return (
         <Tabs>
+            <h2 className="text-2xl md:text-5xl font-bold text-center my-4 md:my-8">Shop by category</h2>
             <TabList>
                 <Tab>Football</Tab>
                 <Tab>Baseball</Tab>

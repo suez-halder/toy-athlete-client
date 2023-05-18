@@ -5,7 +5,7 @@ import ToyBanner from "../Shared/ToyBanner";
 
 /*
 1. baseball -  
-baseball- https://i.ibb.co/JmWLzX4/baseball.png
+baseball- https://i.ibb.co/JmWLzX4/baseball.png 
 gloves- https://i.ibb.co/6nxDWMV/gloves.png
 helmet- https://i.ibb.co/bLxh1DN/helmet.png
 softball- https://i.ibb.co/RYt2vq0/softball.png
@@ -21,12 +21,20 @@ whistle- https://i.ibb.co/vj5kKWk/whistle.png
 
 
 3. tennis- 
-set- https://i.ibb.co/SvbfJqD/pingPong.png
+pingPong set- https://i.ibb.co/SvbfJqD/pingPong.png
 cover- https://i.ibb.co/nc2CrP1/cover.png
 net- https://i.ibb.co/BtHPLbR/net.png
 bat- https://i.ibb.co/P1Tv45S/bat.png
 pongBalls- https://i.ibb.co/pwfqHzy/pong-Balls.png
 table- https://i.ibb.co/gM8xKwm/table.png
+
+
+4. Users -
+https://i.ibb.co/5x8tq8x/chef-1.webp
+https://i.ibb.co/MMVWRd4/chef-2.jpg
+https://i.ibb.co/4SstyWp/chef-3.jpg
+https://i.ibb.co/pn7DTpt/chef-4.webp
+https://i.ibb.co/fvth1Yr/chef-5.jpg
  */
 
 
@@ -110,8 +118,8 @@ const AddToy = () => {
                                     <label htmlFor="job" className="text-sm text-gray-700 block mb-1 font-medium">Sub-category</label>
                                    
                                     <select id="subCategory" name="subCategory" className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" required>
-                                        <option value="football">Football</option>
                                         <option value="basketball">Baseball</option>
+                                        <option value="football">Football</option>
                                         <option value="tennis">Table Tennis</option>
                                        
                                     </select>
