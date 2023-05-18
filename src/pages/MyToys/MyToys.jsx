@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import ToyRow from "../AllToys/ToyRow";
 import ToyBanner from "../Shared/ToyBanner";
+import MyToyRow from "./MyToyRow";
+
 
 
 const MyToys = () => {
@@ -18,6 +19,26 @@ const MyToys = () => {
             })
     }, [url])
 
+    const handleDelete = id =>{
+        const proceed = confirm("Do you want  to delete?");
+        if(proceed){
+            fetch(`http://localhost:3000/toy/${id}`,{
+                method: 'DELETE'
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                // console.log(data);
+                if(data.deletedCount>0){
+                    alert("Deleted Successfully");
+                    const remaining = myToys.filter(booking => booking._id != id);
+                    setMyToys(remaining);
+                    
+                }
+            })
+        }
+    }
+
+    
     
     
     
@@ -29,22 +50,23 @@ const MyToys = () => {
                         {/* head */}
                         <thead >
                             <tr>
+                                <th>Toy Photo</th>
                                 <th>Seller Name</th>
                                 <th>Toy Name</th>
                                 <th>Sub-category</th>
                                 <th>Price</th>
                                 <th>Quantity</th>
-                                <th>Details</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             {/* row 1 */}
                                 {
-                                    myToys.map((toyRow) => <ToyRow
-                                    key={toyRow._id}
-                                    toyRow={toyRow}
-                                 
-                                    ></ToyRow>)
+                                    myToys.map(myToyRow => <MyToyRow 
+                                        key={myToyRow._id}
+                                        myToyRow={myToyRow}
+                                        handleDelete={handleDelete}
+                                    ></MyToyRow> )
                                 }
                             {/* row 2 */}
                             
