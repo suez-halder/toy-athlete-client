@@ -6,7 +6,6 @@ import ToyBanner from "../Shared/ToyBanner";
 /*
 1. baseball -  
 baseball- https://i.ibb.co/JmWLzX4/baseball.png
-bat- https://i.ibb.co/b1rfgSK/bat.png
 gloves- https://i.ibb.co/6nxDWMV/gloves.png
 helmet- https://i.ibb.co/bLxh1DN/helmet.png
 softball- https://i.ibb.co/RYt2vq0/softball.png
@@ -18,7 +17,6 @@ card- https://i.ibb.co/LQSMDT5/card.png
 field- https://i.ibb.co/cw22B6D/field.png
 medal- https://i.ibb.co/khztjYn/medel.png
 whistle- https://i.ibb.co/vj5kKWk/whistle.png
-
 
 
 

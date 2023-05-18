@@ -6,7 +6,7 @@ import ToyRow from "./ToyRow";
 const AllToys = () => {
 
     const allToys = useLoaderData()
-    console.log(allToys);
+    // console.log(allToys);
     
    
     
