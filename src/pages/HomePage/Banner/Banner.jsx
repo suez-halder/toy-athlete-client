@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const Banner = () => {
     return (
-        <div className="hero h-96" style={{ backgroundImage: `url("https://i.ibb.co/pb78dVP/homepage-banner.png")` }}>
+        <div className="hero h-96 rounded-md" style={{ backgroundImage: `url("https://i.ibb.co/pb78dVP/homepage-banner.png")` }}>
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content bg-[#4CB7CF] bg-opacity-80 rounded-2xl w-full md:w-2/3 h-2/3">
                 <div className="max-w-md">

@@ -52,13 +52,13 @@ const MyToys = () => {
                         {/* head */}
                         <thead >
                             <tr>
-                                <th>Toy Photo</th>
-                                <th>Seller Name</th>
-                                <th>Toy Name</th>
-                                <th>Sub-category</th>
-                                <th>Price</th>
-                                <th>Quantity</th>
-                                <th>Action</th>
+                                <th className="bg-info">Toy Photo</th>
+                                <th className="bg-blue-300">Seller Name</th>
+                                <th className="bg-info">Toy Name</th>
+                                <th className="bg-blue-300">Sub-category</th>
+                                <th className="bg-info">Price</th>
+                                <th className="bg-blue-300">Quantity</th>
+                                <th className="bg-info">Action</th>
                             </tr>
                         </thead>
                         <tbody>
