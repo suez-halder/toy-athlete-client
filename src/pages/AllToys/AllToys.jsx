@@ -29,6 +29,7 @@ const AllToys = () => {
     return (
         <div>
             <div><ToyBanner>All Toys List</ToyBanner></div>
+            {/* search */}
             <div className="w-1/5 mx-auto">
                 <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7 flex items-center">
                     <div className="relative">
