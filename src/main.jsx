@@ -17,10 +17,12 @@ import AuthProvider from './providers/AuthProvider';
 import PrivateRoute from './routes/PrivateRoute';
 import ToyDetails from './pages/ToyDetails/ToyDetails';
 import EditMyToy from './pages/MyToys/EditMyToy';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
+    errorElement: <ErrorPage></ErrorPage>,
     element: <HomeLayout></HomeLayout>,
     children: [
       {

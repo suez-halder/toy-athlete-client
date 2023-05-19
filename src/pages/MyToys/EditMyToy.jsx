@@ -56,7 +56,7 @@ const EditMyToy = () => {
                 <div >
                     <div className="p-8 rounded border border-blue-300">
                         <h1 className="font-medium text-3xl">Update Your Toy</h1>
-                        <p className="text-gray-600 mt-6">This is the new toy adding section. Add as much toy as you want and sell it. Yee!</p>
+                        <p className="text-gray-600 mt-6">Update price, quantity, and description of your toy.</p>
 
                         <form onSubmit={handleUpdateToy}>
                             <div className="mt-8 grid lg:grid-cols-2 gap-4">
