@@ -14,7 +14,7 @@ const Header = () => {
 
     return (
 
-        <div className="navbar bg-[#94C7EA] rounded-md text-[#545454]">
+        <div className="navbar bg-sky-800 rounded-md text-[#545454]">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn bg-[#4CB7CF] lg:hidden border-none mr-5">
@@ -36,7 +36,7 @@ const Header = () => {
                 </div>
                 <Link to='/'><img className="h-10 md:h-14 rounded-md" src={logo} alt="" /></Link>
             </div>
-            <div className="navbar-center hidden lg:flex ">
+            <div className="navbar-center hidden lg:flex text-white">
                 <ul className="menu menu-horizontal px-1 lg:flex gap-4 text-lg">
                     <li className="hover:bg-info rounded-md md:tracking-wider"><Link to='/'>Home</Link></li>
                     <li className="hover:bg-info rounded-md md:tracking-wider"><Link to='/blogs'>Blogs</Link></li>
