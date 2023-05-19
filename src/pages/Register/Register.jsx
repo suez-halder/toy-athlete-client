@@ -3,11 +3,12 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { useState } from 'react';
+import toast from 'react-hot-toast';
 
 
 const Register = () => {
 
-    const { createUser, googleSignIn, displayProfile, setLoading} = useContext(AuthContext)
+    const { createUser, googleSignIn, displayProfile, setLoading } = useContext(AuthContext)
     const [error, setError] = useState(null);
 
     const navigate = useNavigate();
@@ -16,7 +17,7 @@ const Register = () => {
     const from = location.state?.from?.pathname || "/";
 
 
-    const handleRegister = event => {
+    const handleRegister = async (event) => {
         event.preventDefault();
 
         const form = event.target;
@@ -27,41 +28,52 @@ const Register = () => {
 
         // console.log(name, email, password, photo);
 
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            setError("Please enter a valid email address");
+            return;
+        }
+
         if (password.length <= 6) {
             setError("Password should be at least 6 characters");
             return;
         }
 
-        createUser(email, password)
-            .then(result => {
-                const user = result.user
-                displayProfile(name, photo)
-                // setUser({ ...user, ...displayProfile });
-                setLoading(false);
-                // console.log(user);
-                navigate(from, { replace: true })
-            })
-            .catch(error => {
-                console.log(error);
-                form.reset();
-            })
+        try {
+            const result = await createUser(email, password, photo);
+            const user = result.user;
+            await displayProfile(name, photo);
+            setLoading(false);
 
-        
+            toast.success("Registered Successfully", {
+                duration: 1000,
+                position: "top-center",
+            });
 
-
+            navigate(from, { replace: true });
+        } catch (error) {
+            setError(error);
+            form.reset();
+        }
 
 
     }
 
-    const handleGoogle = () =>{
+    const handleGoogle = () => {
 
         googleSignIn()
             .then(result => {
                 const user = result.user
-                console.log(user);
+                // console.log(user);
+                toast.success('Registered Successfully', {
+
+                    duration: 1000,
+                    position: 'top-center',
+                })
+                navigate(from, { replace: true })
             })
             .catch(error => {
-                console.log(error);
+                setError(error);
             })
     }
 
@@ -84,25 +96,28 @@ const Register = () => {
                             <div className="divide-y divide-gray-200">
                                 <div className="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
                                     <div className="relative">
-                                        <input  id="name" name="name" type="text" className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Name" />
-                                        <label htmlFor="name" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm" required>Name</label>
+                                        <input id="name" name="name" type="text" className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600" placeholder="Name" required />
+                                        <label htmlFor="name" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm" >Name</label>
                                     </div>
                                     <div className="relative">
-                                        <input  id="email" name="email" type="text" className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Email address" />
-                                        <label htmlFor="email" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm" required>Email Address</label>
+                                        <input id="email" name="email" type="email" className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600" placeholder="Email address" required />
+                                        <label htmlFor="email" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm" >Email Address</label>
                                     </div>
                                     <div className="relative">
-                                        <input autoComplete="off" id="password" name="password" type="password" className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Password" />
-                                        <label htmlFor="password" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm" required>Password</label>
+                                        <input autoComplete="off" id="password" name="password" type="password" className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600" placeholder="Password" required />
+                                        <label htmlFor="password" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm" >Password</label>
                                     </div>
                                     <div className="relative">
-                                        <input  id="photo" name="photo" type="text" className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Photo URL" />
-                                        <label htmlFor="photo" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm" required>Photo URL</label>
+                                        <input id="photo" name="photo" type="text" className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:border-rose-600" placeholder="Photo URL" required />
+                                        <label htmlFor="photo" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm" >Photo URL</label>
                                     </div>
 
-                                    <div className='text-error'>
-                                        <p><small>{error}</small></p>
-                                    </div>
+                                    {error && (
+                                        <div className='text-error'>
+                                            <p><small>{error}</small></p>
+                                        </div>
+                                    )}
+
 
 
                                     <div className="relative text-center">

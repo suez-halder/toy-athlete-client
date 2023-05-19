@@ -1,13 +1,15 @@
 
 import { useLoaderData, useNavigate } from "react-router-dom";
 import ToyBanner from "../Shared/ToyBanner";
+import Swal from 'sweetalert2';
+import toast from 'react-hot-toast';
 
 
 const EditMyToy = () => {
 
     const editToy = useLoaderData()
     const { _id, name, email, toyName, price, subCategory, toyPhoto, rating, quantity, description } = editToy;
-    
+
     const navigate = useNavigate()
 
     const handleUpdateToy = event => {
@@ -28,22 +30,39 @@ const EditMyToy = () => {
         const updateToy = { name, email, toyName, price, subCategory, toyPhoto, rating, quantity, description };
         // console.log(newToy);
 
-        fetch(`https://toy-management-server.vercel.app/editToy/${_id}`, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(updateToy)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.modifiedCount > 0) {
-                    alert("Toy updated")
-                    navigate('/myToys')
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "Do you want to update this toy!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, Update it!'
+        }).then(result => {
+            if (result.isConfirmed) {
+                fetch(`https://toy-management-server.vercel.app/editToy/${_id}`, {
+                    method: 'PUT',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(updateToy)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.modifiedCount > 0) {
+                            toast.success('Toy Deleted Successfully', {
 
-                }
-            })
+                                duration: 1000,
+                                position: 'top-center',
+                            })
+                            navigate('/myToys')
+
+                        }
+                    })
+            }
+        })
+
     }
 
 
@@ -98,7 +117,7 @@ const EditMyToy = () => {
                                 <div>
                                     <label htmlFor="rating" className="text-sm text-gray-700 block mb-1 font-medium">Rating</label>
 
-                                    <select id="rating" name="rating" defaultValue={rating} className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"  required>
+                                    <select id="rating" name="rating" defaultValue={rating} className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" required>
                                         <option value="5">*****</option>
                                         <option value="4">****</option>
                                         <option value="3">***</option>

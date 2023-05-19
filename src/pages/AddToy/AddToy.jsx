@@ -75,7 +75,7 @@ const AddToy = () => {
                         position: 'top-center',
                         icon: 'success',
                         title: 'New Toy Added',
-                        confirmButtonText: 'Ok!'
+                        confirmButtonText: 'Add More!'
                     })
                 }
                 form.reset();

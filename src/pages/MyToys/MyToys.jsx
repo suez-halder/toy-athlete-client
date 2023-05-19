@@ -43,7 +43,7 @@ const MyToys = () => {
                                 const remaining = myToys.filter(booking => booking._id != id);
                                 setMyToys(remaining);
                                 
-                                toast('Toy Deleted Successfully',{
+                                toast.success('Toy Deleted Successfully',{
                                  
                                         duration: 1000,
                                         position: 'top-center',
