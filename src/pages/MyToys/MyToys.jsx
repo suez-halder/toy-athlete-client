@@ -11,7 +11,7 @@ const MyToys = () => {
     const [myToys, setMyToys] = useState([])
     const [selectedFilter, setSelectedFilter] = useState('default');
 
-    const url = `http://localhost:3000/allToys?email=${user?.email}`
+    const url = `https://toy-management-server.vercel.app/allToys?email=${user?.email}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -23,7 +23,7 @@ const MyToys = () => {
     const handleDelete = id => {
         const proceed = confirm("Do you want  to delete?");
         if (proceed) {
-            fetch(`http://localhost:3000/toy/${id}`, {
+            fetch(`https://toy-management-server.vercel.app/toy/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -43,7 +43,7 @@ const MyToys = () => {
         const selectedValue = event.target.value;
         setSelectedFilter(selectedValue);
 
-        const filterUrl = `http://localhost:3000/myToys/${selectedValue}?email=${user?.email}`;
+        const filterUrl = `https://toy-management-server.vercel.app/myToys/${selectedValue}?email=${user?.email}`;
         fetch(filterUrl)
             .then((res) => res.json())
             .then((data) => {

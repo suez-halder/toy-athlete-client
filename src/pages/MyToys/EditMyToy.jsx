@@ -28,7 +28,7 @@ const EditMyToy = () => {
         const updateToy = { name, email, toyName, price, subCategory, toyPhoto, rating, quantity, description };
         // console.log(newToy);
 
-        fetch(`http://localhost:3000/editToy/${_id}`, {
+        fetch(`https://toy-management-server.vercel.app/editToy/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
