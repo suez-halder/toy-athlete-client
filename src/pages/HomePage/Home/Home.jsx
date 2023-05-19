@@ -1,7 +1,7 @@
 import Banner from "../Banner/Banner";
-import BestDeals from "../BestDeals/BestDeals";
 import Categories from "../Categories/Categories";
 import Gallery from "../Gallery/Gallery";
+import Reviews from "../Reviews/Reviews";
 import Services from "../Services/Services";
 
 
@@ -12,7 +12,7 @@ const Home = () => {
             <Banner></Banner>
             <Gallery></Gallery>
             <Categories></Categories>
-            {/* <BestDeals></BestDeals> */}
+            <Reviews></Reviews>
             <Services></Services>
             
 
