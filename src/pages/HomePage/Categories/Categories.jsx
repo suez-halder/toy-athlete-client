@@ -40,27 +40,34 @@ const Categories = () => {
             </TabList>
 
             <TabPanel>
+                <div className="grid grid-cols-1 md:grid-cols-2">
                 {baseball.map(singleBaseball => <Baseball
-                key={singleBaseball._id}
-                singleBaseball={singleBaseball}
-                
+                    key={singleBaseball._id}
+                    singleBaseball={singleBaseball}
+
                 ></Baseball>)}
+                </div>
             </TabPanel>
-            <TabPanel>
-                {football.map(singleFootball => <Football
-                key={singleFootball._id}
-                singleFootball={singleFootball}
-                
-                ></Football>)}  
+
+            <TabPanel >
+                <div className="grid grid-cols-1 md:grid-cols-2">
+                    {football.map(singleFootball => <Football
+                        key={singleFootball._id}
+                        singleFootball={singleFootball}
+                    ></Football>)}
+                </div>
             </TabPanel>
+
             <TabPanel>
-                    {tennis.map(singleTennis => <Tennis
+                <div className="grid grid-cols-1 md:grid-cols-2">
+                {tennis.map(singleTennis => <Tennis
                     key={singleTennis._id}
                     singleTennis={singleTennis}
-                    ></Tennis>)}
-                </TabPanel>
-            
-        </Tabs>
+                ></Tennis>)}
+                </div>
+            </TabPanel>
+
+        </Tabs >
     );
 };
 

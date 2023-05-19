@@ -9,8 +9,8 @@ import Services from "../Services/Services";
 const Home = () => {
     return (
         <div>
-            {/* <Banner></Banner> */}
-            {/* <Gallery></Gallery> */}
+            <Banner></Banner>
+            <Gallery></Gallery>
             <Categories></Categories>
             {/* <BestDeals></BestDeals> */}
             {/* <Services></Services> */}
