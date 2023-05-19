@@ -8,7 +8,9 @@ const HomeLayout = () => {
     return (
         <div>
             <Header></Header>
-            <Outlet></Outlet>
+            <div className="md:min-h-[calc(100vh-345px)]">
+                <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
     );

@@ -7,9 +7,9 @@ const Services = () => {
     AOS.init();
     
     return ( 
-        <div className="hero h-56 rounded-md my-8" style={{ backgroundImage: `url("https://i.ibb.co/51bVYyv/services.jpg")` }}>
+        <div className="hero h-56 rounded-md mb-64 mt-4 md:my-8" style={{ backgroundImage: `url("https://i.ibb.co/51bVYyv/services.jpg")` }}>
             <div className="hero-overlay"></div>
-            <div className="hero-content rounded-xl text-center bg-sky-300 bg-opacity-60  flex flex-col md:flex-row justify-around  w-full h-full ">
+            <div className="hero-content rounded-xl text-center bg-sky-300 bg-opacity-70  flex flex-col md:flex-row justify-around  w-full h-full ">
                 <div className="max-w-md " data-aos="fade-right" data-aos-delay="500">
                     <span className="text-5xl text- text-blue-500 "><FaTruck className="mb-2 mx-auto"></FaTruck></span>
                     <h3 className="text-xl font-medium mb-2">Free Shipping</h3>
