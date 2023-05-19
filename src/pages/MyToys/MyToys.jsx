@@ -5,8 +5,10 @@ import ToyBanner from "../Shared/ToyBanner";
 import MyToyRow from "./MyToyRow";
 import Swal from 'sweetalert2';
 import toast from 'react-hot-toast';
+import { updateDocumentTitle } from "../../utils/FunctionTitle";
 
 const MyToys = () => {
+    updateDocumentTitle("Toy Athlete | My Toys")
     const { user } = useContext(AuthContext);
     const [myToys, setMyToys] = useState([])
     const [selectedFilter, setSelectedFilter] = useState('default');
@@ -93,7 +95,7 @@ const MyToys = () => {
 
 
             {/* table */}
-            <div className="overflow-x-auto mt-8 border border-blue-400">
+            <div className="overflow-x-auto mt-8 border border-blue-400 shadow-lg shadow-blue-600 md:mb-8">
                 <table className="table table-zebra w-full text-center">
                     {/* head */}
                     <thead >

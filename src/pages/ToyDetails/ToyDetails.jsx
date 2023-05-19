@@ -1,9 +1,11 @@
 import { FaArrowLeft } from "react-icons/fa";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { updateDocumentTitle } from "../../utils/FunctionTitle";
 import ToyBanner from "../Shared/ToyBanner";
 
 
 const ToyDetails = () => {
+    updateDocumentTitle("Toy Athlete | Toy Details")
 
     const toyDetails = useLoaderData()
     // console.log(toyDetails);

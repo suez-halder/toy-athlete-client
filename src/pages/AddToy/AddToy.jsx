@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import ToyBanner from "../Shared/ToyBanner";
 import Swal from 'sweetalert2'
+import { updateDocumentTitle } from "../../utils/FunctionTitle";
 
 /*
 1. baseball -  
@@ -39,6 +40,7 @@ https://i.ibb.co/fvth1Yr/chef-5.jpg
 
 
 const AddToy = () => {
+    updateDocumentTitle("Toy Athlete | Add Toy")
     const { user } = useContext(AuthContext);
 
 
@@ -94,7 +96,7 @@ const AddToy = () => {
             <ToyBanner>Add a Toy</ToyBanner>
             <div className="md:mt-8 w-2/3 mx-auto">
                 <div >
-                    <div className="p-8 rounded border border-blue-300">
+                    <div className="p-8 rounded border border-blue-300 shadow-lg shadow-blue-600 md:mb-8">
                         <h1 className="font-medium text-3xl">Add a New Toy</h1>
                         <p className="text-gray-600 mt-6">This is the new toy adding section. Add as much toy as you want and sell it. Yee!</p>
 
@@ -107,7 +109,7 @@ const AddToy = () => {
 
                                 <div>
                                     <label htmlFor="email" className="text-sm text-gray-700 block mb-1 font-medium">Email Address</label>
-                                    <input type="text" name="email" defaultValue={user.email} id="email" className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" placeholder="email@email.com" required />
+                                    <input type="email" name="email" defaultValue={user.email} id="email" className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" placeholder="email@email.com" required />
                                 </div>
 
                                 <div>

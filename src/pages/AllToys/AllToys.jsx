@@ -4,8 +4,10 @@ import ToyBanner from "../Shared/ToyBanner";
 import ToyRow from "./ToyRow";
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
+import { updateDocumentTitle } from "../../utils/FunctionTitle";
 
 const AllToys = () => {
+    updateDocumentTitle("Toy Athlete | All Toys")
     const allToys = useLoaderData()
     const [searchText, setSearchText] = useState("");
     const [toySearch, setToySearch] = useState(allToys)
@@ -44,7 +46,7 @@ const AllToys = () => {
             
             {/* table */}
             <div>
-                <div className="overflow-x-auto border border-blue-300 rounded-xl mb-8">
+                <div className="overflow-x-auto border border-blue-300 rounded-xl shadow-lg shadow-blue-600 md:mb-8">
                     <table className="table table-zebra w-full text-center">
                         {/* head */}
                         <thead >

@@ -1,3 +1,5 @@
+
+import { updateDocumentTitle } from "../../../utils/FunctionTitle";
 import Banner from "../Banner/Banner";
 import Categories from "../Categories/Categories";
 import Gallery from "../Gallery/Gallery";
@@ -7,6 +9,8 @@ import Services from "../Services/Services";
 
 
 const Home = () => {
+    updateDocumentTitle("Toy Athlete | Home Page")
+    
     return (
         <div>
             <Banner></Banner>

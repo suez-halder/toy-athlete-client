@@ -3,9 +3,11 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import ToyBanner from "../Shared/ToyBanner";
 import Swal from 'sweetalert2';
 import toast from 'react-hot-toast';
+import { updateDocumentTitle } from "../../utils/FunctionTitle";
 
 
 const EditMyToy = () => {
+    updateDocumentTitle("Toy Athlete | Update Toy")
 
     const editToy = useLoaderData()
     const { _id, name, email, toyName, price, subCategory, toyPhoto, rating, quantity, description } = editToy;
@@ -27,7 +29,7 @@ const EditMyToy = () => {
         const description = form.description.value;
 
         // console.log(name, email, toyName, price, subCategory, toyPhoto, rating, quantity, description);
-        const updateToy = { name, email, toyName, price, subCategory, toyPhoto, rating, quantity, description };
+        const updateToy = {name, email, toyName, price, subCategory, toyPhoto, rating, quantity, description };
         // console.log(newToy);
 
         Swal.fire({
@@ -37,7 +39,7 @@ const EditMyToy = () => {
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, Update it!'
+            confirmButtonText: 'Update Now!'
         }).then(result => {
             if (result.isConfirmed) {
                 fetch(`https://toy-management-server.vercel.app/editToy/${_id}`, {
@@ -51,9 +53,9 @@ const EditMyToy = () => {
                     .then(data => {
                         console.log(data);
                         if (data.modifiedCount > 0) {
-                            toast.success('Toy Deleted Successfully', {
+                            toast.success('Toy Updated Successfully', {
 
-                                duration: 1000,
+                                duration: 2000,
                                 position: 'top-center',
                             })
                             navigate('/myToys')
@@ -63,6 +65,7 @@ const EditMyToy = () => {
             }
         })
 
+
     }
 
 
@@ -70,10 +73,10 @@ const EditMyToy = () => {
 
     return (
         <div>
-            <ToyBanner>Update Your Toy</ToyBanner>
+            <ToyBanner>Update Toy Details</ToyBanner>
             <div className="md:mt-8 w-2/3 mx-auto">
                 <div >
-                    <div className="p-8 rounded border border-blue-300">
+                    <div className="p-8 rounded border border-blue-300 shadow-lg shadow-blue-600 md:mb-8">
                         <h1 className="font-medium text-3xl">Update Your Toy</h1>
                         <p className="text-gray-600 mt-6">Update price, quantity, and description of your toy.</p>
 
@@ -86,7 +89,7 @@ const EditMyToy = () => {
 
                                 <div>
                                     <label htmlFor="email" className="text-sm text-gray-700 block mb-1 font-medium">Email Address</label>
-                                    <input type="text" name="email" defaultValue={email} id="email" className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" placeholder="email@email.com" required />
+                                    <input type="email" name="email" defaultValue={email} id="email" className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" placeholder="email@email.com" required />
                                 </div>
 
                                 <div>

@@ -2,10 +2,12 @@
 import { Link, useRouteError } from "react-router-dom";
 import errorAnimation from './../../assets/error/error.json'
 import Lottie from "lottie-react";
+import { updateDocumentTitle } from "../../utils/FunctionTitle";
 
 
 
 const ErrorPage = () => {
+    updateDocumentTitle("Toy Athlete | Error Page")
     const error = useRouteError();
     // console.error(error.status);
 

@@ -4,8 +4,10 @@ import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
+import { updateDocumentTitle } from "../../utils/FunctionTitle";
 
 const Login = () => {
+    updateDocumentTitle("Toy Athlete | Login")
     const { signIn, googleSignIn } = useContext(AuthContext);
     const [error, setError] = useState(null);
 

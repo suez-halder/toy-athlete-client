@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/editToy/:id',
-        element: <EditMyToy></EditMyToy>,
+        element: <PrivateRoute><EditMyToy></EditMyToy></PrivateRoute>,
         loader: ({params}) => fetch(`https://toy-management-server.vercel.app/toy/${params.id}`)
 
       },

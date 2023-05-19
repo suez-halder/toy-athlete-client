@@ -1,7 +1,11 @@
+import { updateDocumentTitle } from "../../utils/FunctionTitle";
 import ToyBanner from "../Shared/ToyBanner";
 
 
 const Blogs = () => {
+    updateDocumentTitle("Toy Athlete | Blogs")
+    
+    
     return (
         <div>
             <ToyBanner>Frequently Asked Questions</ToyBanner>
