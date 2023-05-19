@@ -22,8 +22,8 @@ whistle- https://i.ibb.co/vj5kKWk/whistle.png
 
 3. tennis- 
 pingPong set- https://i.ibb.co/SvbfJqD/pingPong.png
-cover- https://i.ibb.co/nc2CrP1/cover.png
 net- https://i.ibb.co/BtHPLbR/net.png
+cover- https://i.ibb.co/nc2CrP1/cover.png
 bat- https://i.ibb.co/P1Tv45S/bat.png
 pongBalls- https://i.ibb.co/pwfqHzy/pong-Balls.png
 table- https://i.ibb.co/gM8xKwm/table.png
@@ -118,7 +118,7 @@ const AddToy = () => {
                                     <label htmlFor="job" className="text-sm text-gray-700 block mb-1 font-medium">Sub-category</label>
                                    
                                     <select id="subCategory" name="subCategory" className="bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" required>
-                                        <option value="basketball">Baseball</option>
+                                        <option value="baseball">Baseball</option>
                                         <option value="football">Football</option>
                                         <option value="tennis">Table Tennis</option>
                                        
