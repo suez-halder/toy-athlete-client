@@ -32,15 +32,15 @@ const Categories = () => {
 
     return (
         <Tabs>
-            <h2 className="text-2xl md:text-5xl font-bold text-center my-4 md:my-8">Shop by category</h2>
-            <TabList>
+            <h2 className="text-2xl md:text-5xl font-bold text-center my-4 md:my-8 rounded-md">Shop by category</h2>
+            <TabList style={{backgroundColor: '#94C7EA', textAlign: 'center', fontSize: '1.25rem', borderRadius: '0.375rem', width: '100%', marginLeft: 'auto', marginRight: 'auto',  padding: '1rem' }}>
                 <Tab>Baseball</Tab>
                 <Tab>Football</Tab>
                 <Tab>Table Tennis</Tab>
             </TabList>
 
             <TabPanel>
-                <div className="grid grid-cols-1 md:grid-cols-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 w-3/4 md:w-full mx-auto">
                 {baseball.map(singleBaseball => <Baseball
                     key={singleBaseball._id}
                     singleBaseball={singleBaseball}
@@ -50,7 +50,7 @@ const Categories = () => {
             </TabPanel>
 
             <TabPanel >
-                <div className="grid grid-cols-1 md:grid-cols-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 w-3/4 md:w-full mx-auto">
                     {football.map(singleFootball => <Football
                         key={singleFootball._id}
                         singleFootball={singleFootball}
@@ -59,7 +59,7 @@ const Categories = () => {
             </TabPanel>
 
             <TabPanel>
-                <div className="grid grid-cols-1 md:grid-cols-2">
+                <div className="grid grid-cols-1 md:grid-cols-2 w-3/4 md:w-full mx-auto">
                 {tennis.map(singleTennis => <Tennis
                     key={singleTennis._id}
                     singleTennis={singleTennis}

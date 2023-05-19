@@ -19,7 +19,7 @@ const Football = ({ singleFootball }) => {
     };
 
     return (
-        <div className="card card-side bg-blue-200 shadow-2xl w-5/6 mx-auto my-4 text-center">
+        <div className="card card-side bg-blue-200 shadow-2xl w-full md:w-5/6 mx-auto my-4 text-center">
             <figure>
                 <img className="w-3/4" src={toyPhoto} alt="Movie" />
             </figure>
