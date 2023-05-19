@@ -23,11 +23,11 @@ const Categories = () => {
 
     useEffect(() => {
         const allBaseball = myToys.filter(toy => toy.subCategory === 'baseball');
-        setBaseball(allBaseball);
+        setBaseball(allBaseball.slice(0,4));
         const allFootball = myToys.filter(toy => toy.subCategory === 'football');
-        setFootball(allFootball);
+        setFootball(allFootball.slice(0,4));
         const allTennis = myToys.filter(toy => toy.subCategory === 'tennis');
-        setTennis(allTennis);
+        setTennis(allTennis.slice(0,4));
     }, [myToys]);
 
     return (

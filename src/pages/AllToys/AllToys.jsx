@@ -44,7 +44,7 @@ const AllToys = () => {
             
             {/* table */}
             <div>
-                <div className="overflow-x-auto border border-blue-300 rounded-xl">
+                <div className="overflow-x-auto border border-blue-300 rounded-xl mb-8">
                     <table className="table table-zebra w-full text-center">
                         {/* head */}
                         <thead >

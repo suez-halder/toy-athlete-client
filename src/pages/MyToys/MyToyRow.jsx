@@ -1,6 +1,7 @@
 import { FaPen, FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+
 const MyToyRow = ({myToyRow, handleDelete}) => {
     const {_id, name, toyName, price, subCategory, toyPhoto, quantity} = myToyRow;
     return (
