@@ -32,30 +32,30 @@ const ToyDetails = () => {
             <div><ToyBanner>{toyName} Details Here</ToyBanner></div>
             <div className="my-10">
                 <div className="hero">
-                    <div className=" grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24  bg-sky-100  rounded-md">
-                        <img className="w-1/2 md:w-full" src={toyPhoto} />
-                        <div>
-                            <div className="flex justify-between ">
+                    <div className=" grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-0  bg-sky-100 shadow-inner shadow-blue-600  rounded-md">
+                        <img className="w-1/2 md:w-3/4 mx-auto" src={toyPhoto} />
+                        <div className="w-4/5 mx-auto ">
+                            <div className="flex justify-between">
                                 <div>
                                     <h1 className="text-xl md:text-3xl font-bold mb-4">{toyName}</h1>
                                 </div>
                                 <div>
-                                    <p className="text-blue-900 text-2xl md:text-5xl mr-10">${price}</p>
+                                    <p className="text-blue-900 text-2xl md:text-4xl">${price}</p>
                                 </div>
                             </div>
                             <div className="rating ">
                                 {renderRatingStars()}
                             </div>
-                            <p className="py-6">{description}</p>
-                            <p className="font-bold">Availability: {quantity} </p>
+                            <p className="py-6 text-justify">{description}</p>
+                            <p className="font-bold text-lg">Availability: {quantity} </p>
                             <p className="font-medium">Seller Name: {name} </p>
-                            <p className="font-medium">Email: {email} </p>
+                            <p className="font-medium mb-8 md:mb-2">Email: {email} </p>
                         </div>
                     </div>
                 </div>
-                <div className="hero-content text-center">
+                <div className="hero-content text-center mt-8">
                     <div>
-                        <button onClick={() => { navigate(-1)}} className=" btn btn-info hover:bg-blue-500 text-white flex gap-2"> <FaArrowLeft></FaArrowLeft>  Back</button>
+                        <button onClick={() => { navigate(-1) }} className=" btn btn-info hover:bg-blue-500 text-white flex gap-2 px-8"> <FaArrowLeft></FaArrowLeft>  Back</button>
 
                     </div>
 
