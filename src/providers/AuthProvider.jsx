@@ -26,7 +26,7 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, googleProvider);
     }
 
-    const displayProfile = (name, photo)=>{
+    const displayProfile = (name, photo) => {
         setLoading(true);
         return updateProfile(auth.currentUser, {
             displayName: name,
@@ -44,32 +44,32 @@ const AuthProvider = ({ children }) => {
             setUser(currentUser);
             // console.log('current user in authProvider', currentUser);
             setLoading(false);
-            
-        });
+
+    });
 
 
-        return () => {
-            return unsubscribe();
-        }
-    }, [])
-
-    const authInfo = {
-        user,
-        setUser,
-        loading,
-        setLoading,
-        createUser,
-        signIn,
-        googleSignIn,
-        displayProfile,
-        logOut
+    return () => {
+        return unsubscribe();
     }
+}, [])
 
-    return (
-        <AuthContext.Provider value={authInfo}>
-            {children}
-        </AuthContext.Provider>
-    );
+const authInfo = {
+    user,
+    setUser,
+    loading,
+    setLoading,
+    createUser,
+    signIn,
+    googleSignIn,
+    displayProfile,
+    logOut
+}
+
+return (
+    <AuthContext.Provider value={authInfo}>
+        {children}
+    </AuthContext.Provider>
+);
 };
 
 export default AuthProvider;
