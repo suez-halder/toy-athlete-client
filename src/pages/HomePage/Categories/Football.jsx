@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 const Football = ({ singleFootball }) => {
@@ -31,7 +32,12 @@ const Football = ({ singleFootball }) => {
                 </div>
                 <div className="text-center mt-2">
                     <Link to={`/toy/${_id}`}>
-                        <button className="btn btn-info hover:bg-blue-500 text-white border-none">Details</button>
+                        <button onClick={() => toast.success('You have to log in first to view details', {
+
+                            duration: 3000,
+                            position: 'top-center',
+                        })}
+                            className="btn btn-info hover:bg-blue-500 text-white border-none">Details</button>
                     </Link>
                 </div>
             </div>
