@@ -32,7 +32,7 @@ const Baseball = ({ singleBaseball }) => {
                 </div>
                 <div className="text-center mt-2">
                     <Link to={`/toy/${_id}`}>
-                        <button onClick={()=> toast.success('You have to log in first to view details',{
+                        <button onClick={()=> toast.error('You have to log in first to view details',{
                                  
                                  duration: 3000,
                                  position: 'top-center',
