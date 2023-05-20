@@ -54,10 +54,10 @@ const Header = () => {
             <div className="navbar-end">
                 {
 
-                    user?.photoURL && <img className="rounded-full h-10 mr-2" src={user.photoURL} alt="" title={user.displayName} />
+                    user?.photoURL && <img className="rounded-full h-8 md:h-10 mr-4" src={user.photoURL} alt="" title={user.displayName} />
                 }
                 {
-                    user ? <Link to='login'><button onClick={logOut} className="btn bg-[#4CB7CF] hover:bg-info border-none px-8 md:px-12 md:tracking-widest">Log Out</button></Link> : <Link to='login'><button className="btn bg-[#4CB7CF] hover:bg-info border-none px-8 md:px-12 md:tracking-widest">Login</button></Link>
+                    user ? <Link to='login'><button onClick={logOut} className="btn bg-[#4CB7CF] hover:bg-info border-none px-2 md:px-8 tracking-normal md:tracking-widest">Log Out</button></Link> : <Link to='login'><button className="btn bg-[#4CB7CF] hover:bg-info border-none px-2 md:px-8 tracking-normal md:tracking-widest">Login</button></Link>
                 }
             </div>
         </div>

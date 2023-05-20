@@ -33,7 +33,21 @@ const Categories = () => {
     return (
         <Tabs>
             <h2 className="text-2xl md:text-5xl font-bold text-center my-4 md:my-8 rounded-md">Shop by category</h2>
-            <TabList style={{backgroundColor: '#94C7EA', textAlign: 'center', fontSize: '1.25rem', borderRadius: '0.375rem', width: '100%', marginLeft: 'auto', marginRight: 'auto',  padding: '1rem' }}>
+            <TabList 
+            style={{
+                backgroundColor: '#94C7EA', 
+                textAlign: 'center', 
+                fontSize: '18px', 
+                borderRadius: '0.375rem', 
+                width: '100%', 
+                marginLeft: 'auto', 
+                marginRight: 'auto',  
+                padding: '1rem',
+
+                
+                
+                 
+                }}>
                 <Tab>Baseball</Tab>
                 <Tab>Football</Tab>
                 <Tab>Table Tennis</Tab>

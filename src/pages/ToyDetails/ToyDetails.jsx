@@ -32,7 +32,7 @@ const ToyDetails = () => {
             <div><ToyBanner>{toyName} Details Here</ToyBanner></div>
             <div className="my-10">
                 <div className="hero">
-                    <div className="hero-content flex-col gap-10 md:gap-24 lg:flex-row bg-sky-100 bg-red-500 rounded-md">
+                    <div className=" grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24  bg-sky-100  rounded-md">
                         <img className="w-1/2 md:w-full" src={toyPhoto} />
                         <div>
                             <div className="flex justify-between ">
@@ -50,9 +50,6 @@ const ToyDetails = () => {
                             <p className="font-bold">Availability: {quantity} </p>
                             <p className="font-medium">Seller Name: {name} </p>
                             <p className="font-medium">Email: {email} </p>
-
-
-
                         </div>
                     </div>
                 </div>
