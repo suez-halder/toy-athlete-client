@@ -74,7 +74,7 @@ const AddToy = () => {
                 // console.log(data);
                 if (data.insertedId) {
                     Swal.fire({
-                        position: 'top-center',
+                        position: 'center',
                         icon: 'success',
                         title: 'New Toy Added',
                         confirmButtonText: 'Add More!'

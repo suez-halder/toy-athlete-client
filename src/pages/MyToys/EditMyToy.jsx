@@ -29,7 +29,7 @@ const EditMyToy = () => {
         const description = form.description.value;
 
         // console.log(name, email, toyName, price, subCategory, toyPhoto, rating, quantity, description);
-        const updateToy = {name, email, toyName, price, subCategory, toyPhoto, rating, quantity, description };
+        const updateToy = { name, email, toyName, price, subCategory, toyPhoto, rating, quantity, description };
         // console.log(newToy);
 
         Swal.fire({
@@ -45,16 +45,16 @@ const EditMyToy = () => {
                 fetch(`https://toy-management-server.vercel.app/editToy/${_id}`, {
                     method: 'PUT',
                     headers: {
-                        'content-type': 'application/json'
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(updateToy)
                 })
+
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
+                        // console.log(data);
                         if (data.modifiedCount > 0) {
                             toast.success('Toy Updated Successfully', {
-
                                 duration: 2000,
                                 position: 'top-center',
                             })
@@ -62,6 +62,10 @@ const EditMyToy = () => {
 
                         }
                     })
+
+
+             
+
             }
         })
 
@@ -135,7 +139,7 @@ const EditMyToy = () => {
                                 </div>
                                 <div>
                                     <label htmlFor="description" className="text-sm text-gray-700 block mb-1 font-medium">Toy Description</label>
-                                    <textarea type="text" name="description" id="description" className=" textarea textarea-bordered bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" placeholder={description} />
+                                    <textarea type="text" name="description" defaultValue={description} id="description" className=" textarea textarea-bordered bg-gray-100 border border-gray-300 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full" placeholder={description} />
                                 </div>
 
 

@@ -47,7 +47,7 @@ const Register = () => {
             setLoading(false);
 
             toast.success("Registered Successfully", {
-                duration: 1000,
+                duration: 2000,
                 position: "top-center",
             });
 

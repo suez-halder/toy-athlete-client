@@ -28,9 +28,9 @@ const MyToys = () => {
             text: "You won't be able to play with this toy!",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonColor: '#d33',
+            cancelButtonColor:  '#3085d6',
+            confirmButtonText: 'Yes, Delete!'
         })
             .then((result) => {
                 if (result.isConfirmed) {
@@ -41,13 +41,10 @@ const MyToys = () => {
                         .then(data => {
                             // console.log(data);
                             if (data.deletedCount > 0) {
-
                                 const remaining = myToys.filter(booking => booking._id != id);
                                 setMyToys(remaining);
-                                
                                 toast.success('Toy Deleted Successfully',{
-                                 
-                                        duration: 1000,
+                                        duration: 2000,
                                         position: 'top-center',
                                 })
 

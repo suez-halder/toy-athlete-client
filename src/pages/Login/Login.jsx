@@ -31,7 +31,7 @@ const Login = () => {
                 // console.log(user);
                 toast.success('Logged In Successfully',{
                                  
-                    duration: 1000,
+                    duration: 2000,
                     position: 'top-center',
             })
                 navigate(from, { replace: true })
