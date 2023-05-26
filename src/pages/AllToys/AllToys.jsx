@@ -19,7 +19,7 @@ const AllToys = () => {
 
     const handleSearch = () => {
 
-        fetch(`https://toy-management-server.vercel.app/alltoys/${searchText}`)
+        fetch(`https://toy-athlete-server.vercel.app/alltoys/${searchText}`)
             .then(res => res.json())
             .then(data => {
                 setToySearch(data);

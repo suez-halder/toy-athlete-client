@@ -33,17 +33,17 @@ const router = createBrowserRouter([
       {
         path: '/allToys',
         element: <AllToys></AllToys>,
-        loader: () => fetch('https://toy-management-server.vercel.app/alltoys')
+        loader: () => fetch('https://toy-athlete-server.vercel.app/alltoys')
       },
       {
         path: '/toy/:id',
         element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-        loader: ({params}) => fetch(`https://toy-management-server.vercel.app/toy/${params.id}`)
+        loader: ({params}) => fetch(`https://toy-athlete-server.vercel.app/toy/${params.id}`)
       },
       {
         path: '/editToy/:id',
         element: <PrivateRoute><EditMyToy></EditMyToy></PrivateRoute>,
-        loader: ({params}) => fetch(`https://toy-management-server.vercel.app/toy/${params.id}`)
+        loader: ({params}) => fetch(`https://toy-athlete-server.vercel.app/toy/${params.id}`)
 
       },
       {

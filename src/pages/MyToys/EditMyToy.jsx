@@ -42,7 +42,7 @@ const EditMyToy = () => {
             confirmButtonText: 'Update Now!'
         }).then(result => {
             if (result.isConfirmed) {
-                fetch(`https://toy-management-server.vercel.app/editToy/${_id}`, {
+                fetch(`https://toy-athlete-server.vercel.app/editToy/${_id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'

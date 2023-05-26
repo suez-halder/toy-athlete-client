@@ -11,7 +11,7 @@ const Categories = () => {
     const [football, setFootball] = useState([]);
     const [tennis, setTennis] = useState([]);
 
-    const url = 'https://toy-management-server.vercel.app/allToys';
+    const url = 'https://toy-athlete-server.vercel.app/allToys';
 
     useEffect(() => {
         fetch(url)

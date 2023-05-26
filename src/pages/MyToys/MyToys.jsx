@@ -13,7 +13,7 @@ const MyToys = () => {
     const [myToys, setMyToys] = useState([])
     const [selectedFilter, setSelectedFilter] = useState('default');
 
-    const url = `https://toy-management-server.vercel.app/allToys?email=${user?.email}`
+    const url = `https://toy-athlete-server.vercel.app/allToys?email=${user?.email}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -34,7 +34,7 @@ const MyToys = () => {
         })
             .then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`https://toy-management-server.vercel.app/toy/${id}`, {
+                    fetch(`https://toy-athlete-server.vercel.app/toy/${id}`, {
                         method: 'DELETE'
                     })
                         .then(res => res.json())
@@ -59,7 +59,7 @@ const MyToys = () => {
         const selectedValue = event.target.value;
         setSelectedFilter(selectedValue);
 
-        const filterUrl = `https://toy-management-server.vercel.app/myToys/${selectedValue}?email=${user?.email}`;
+        const filterUrl = `https://toy-athlete-server.vercel.app/myToys/${selectedValue}?email=${user?.email}`;
         fetch(filterUrl)
             .then((res) => res.json())
             .then((data) => {

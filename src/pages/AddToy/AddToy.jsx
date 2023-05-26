@@ -62,7 +62,7 @@ const AddToy = () => {
         const newToy = { name, email, toyName, price, subCategory, toyPhoto, rating, quantity, description };
         // console.log(newToy);
 
-        fetch('https://toy-management-server.vercel.app/addtoy', {
+        fetch('https://toy-athlete-server.vercel.app/addtoy', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
