@@ -16,22 +16,22 @@ const Reasons = () => {
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover'
              }}>
-                <div className="max-w-md flex flex-col md:flex-row justify-around">
-                    <span className="text-6xl text- text-blue-600 mr-4"><FaPencilRuler /></span>
+                <div className="max-w-md flex flex-col md:flex-row  justify-around">
+                    <span className="text-4xl md:text-6xl text- text-blue-600 mr-4 mb-4"><FaPencilRuler /></span>
                     <div>
                         <h3 className="text-xl font-medium mb-2">Premium Quality Selection</h3>
                         <p className="text-[#545454]">At Toy Athlete, we believe in quality over quantity. Every toy that graces our shelves undergoes a rigorous selection process to ensure that it meets our high standards.</p>
                     </div>
                 </div>
                 <div className="max-w-md flex flex-col md:flex-row justify-around">
-                    <span className="text-6xl text- text-blue-600 mr-4"><GiSoccerBall /></span>
+                    <span className="text-4xl md:text-6xl  text- text-blue-600 mr-4 mb-4"><GiSoccerBall /></span>
                     <div>
                         <h3 className="text-xl font-medium mb-2">Encourage Active Play</h3>
                         <p className="text-[#545454]">In an age dominated by screens, we take pride in offering toys that get kids moving. Our products are curated to foster physical activity, from running and jumping to balancing and coordination</p>
                     </div>
                 </div>
-                <div className="max-w-md flex flex-col md:flex-row justify-around">
-                    <span className="text-6xl text- text-blue-600 mr-4"><FaBookOpen/></span>
+                <div className="max-w-md flex flex-col md:flex-row justify-around text-ce">
+                    <span className="text-4xl md:text-6xl  text- text-blue-600 mr-4 mb-4"><FaBookOpen/></span>
                     <div>
                         <h3 className="text-xl font-medium mb-2">Educational and Fun</h3>
                         <p className="text-[#545454]">Our toys do more than just entertain; they educate. Through play, kids can explore new concepts, develop problem-solving skills, and ignite their creativity. Toy Athlete ensures that every toy provides an opportunity for children to learn while they have fun.</p>
